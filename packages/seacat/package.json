@@ -1,0 +1,32 @@
+{
+  "name": "seacat",
+  "version": "1.0.0",
+  "description": "Now I’m the model of a modern major general / The venerated Virginian veteran whose men are all / Lining up, to put me up on a pedestal / Writin’ letters to relatives / Embellishin’ my elegance and eloquence / But the elephant is in the room / The truth is in ya face when ya hear the British cannons go / BOOM",
+  "keywords": [],
+  "author": "lvfangren <m18188267414@163.com>",
+  "license": "ISC",
+  "main": "lib/seacat.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.nlark.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lvfangren/Gun.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "clean": "rimraf lib"
+  },
+  "bugs": {
+    "url": "https://github.com/lvfangren/Gun/issues"
+  },
+  "homepage": "https://github.com/lvfangren/Gun#readme"
+}
