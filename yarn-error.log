@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add -W -D @commitlint/conventional-commit
+  /usr/local/bin/node /usr/local/bin/yarn add -D -W commitizen cz-emoji-chinese
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
@@ -14,17 +14,17 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.nlark.com/@commitlint%2fconventional-commit: Not found
-      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66988:18)
-      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140662:22)
-      at Request.emit (events.js:315:20)
-      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141634:10)
-      at Request.emit (events.js:315:20)
-      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141556:12)
-      at Object.onceWrapper (events.js:421:28)
-      at IncomingMessage.emit (events.js:327:22)
-      at endReadableNT (internal/streams/readable.js:1327:12)
-      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+  Error: write EADDRNOTAVAIL
+      at WriteWrap.onWriteComplete [as oncomplete] (internal/stream_base_commons.js:94:16)
+      at handleWriteReq (internal/stream_base_commons.js:60:21)
+      at writeGeneric (internal/stream_base_commons.js:145:15)
+      at TLSSocket.Socket._writeGeneric (net.js:785:11)
+      at TLSSocket.Socket._write (net.js:797:8)
+      at doWrite (internal/streams/writable.js:377:12)
+      at clearBuffer (internal/streams/writable.js:529:7)
+      at TLSSocket.Writable.uncork (internal/streams/writable.js:317:7)
+      at ClientRequest._flushOutput (_http_outgoing.js:909:10)
+      at ClientRequest._flush (_http_outgoing.js:878:22)
 
 npm manifest: 
   {
@@ -42,8 +42,11 @@ npm manifest:
     },
     "devDependencies": {
       "@commitlint/cli": "^13.2.1",
+      "@commitlint/config-angular": "^13.2.0",
+      "husky": "^7.0.2",
       "jest": "^27.2.5",
       "lerna": "^4.0.0",
+      "lint-staged": "^11.2.2",
       "typescript": "^4.4.3"
     },
     "workspaces": [
@@ -373,6 +376,18 @@ Lockfile:
       resolve-from "5.0.0"
       resolve-global "1.0.0"
       yargs "^17.0.0"
+  
+  "@commitlint/config-angular-type-enum@^13.2.0":
+    version "13.2.0"
+    resolved "https://registry.npmmirror.com/@commitlint/config-angular-type-enum/download/@commitlint/config-angular-type-enum-13.2.0.tgz#e3f9b8a07118ed8e060b0b1d04a549f74957634d"
+    integrity sha1-4/m4oHEY7Y4GCwsdBKVJ90lXY00=
+  
+  "@commitlint/config-angular@^13.2.0":
+    version "13.2.0"
+    resolved "https://registry.npmmirror.com/@commitlint/config-angular/download/@commitlint/config-angular-13.2.0.tgz#78c62551279bdf7ed3a9bf993751f346c42b2944"
+    integrity sha1-eMYlUSeb337Tqb+ZN1HzRsQrKUQ=
+    dependencies:
+      "@commitlint/config-angular-type-enum" "^13.2.0"
   
   "@commitlint/ensure@^13.2.0":
     version "13.2.0"
@@ -1765,7 +1780,12 @@ Lockfile:
       json-schema-traverse "^0.4.1"
       uri-js "^4.2.2"
   
-  ansi-escapes@^4.2.1:
+  ansi-colors@^4.1.1:
+    version "4.1.1"
+    resolved "https://registry.nlark.com/ansi-colors/download/ansi-colors-4.1.1.tgz#cbb9ae256bf750af1eab344f229aa27fe94ba348"
+    integrity sha1-y7muJWv3UK8eqzRPIpqif+lLo0g=
+  
+  ansi-escapes@^4.2.1, ansi-escapes@^4.3.0:
     version "4.3.2"
     resolved "https://registry.nlark.com/ansi-escapes/download/ansi-escapes-4.3.2.tgz#6b2291d1db7d98b6521d5f1efa42d0f3a9feb65e"
     integrity sha1-ayKR0dt9mLZSHV8e+kLQ86n+tl4=
@@ -1885,6 +1905,11 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.nlark.com/assert-plus/download/assert-plus-1.0.0.tgz#f12e0f3c5d77b0b1cdd9146942e4e96c1e4dd525"
     integrity sha1-8S4PPF13sLHN2RRpQuTpbB5N1SU=
+  
+  astral-regex@^2.0.0:
+    version "2.0.0"
+    resolved "https://registry.npmmirror.com/astral-regex/download/astral-regex-2.0.0.tgz#483143c567aeed4785759c0865786dc77d7d2e31"
+    integrity sha1-SDFDxWeu7UeFdZwIZXhtx319LjE=
   
   asynckit@^0.4.0:
     version "0.4.0"
@@ -2172,6 +2197,14 @@ Lockfile:
     dependencies:
       restore-cursor "^3.1.0"
   
+  cli-truncate@2.1.0, cli-truncate@^2.1.0:
+    version "2.1.0"
+    resolved "https://registry.npmmirror.com/cli-truncate/download/cli-truncate-2.1.0.tgz#c39e28bf05edcde5be3b98992a22deed5a2b93c7"
+    integrity sha1-w54ovwXtzeW+O5iZKiLe7Vork8c=
+    dependencies:
+      slice-ansi "^3.0.0"
+      string-width "^4.2.0"
+  
   cli-width@^3.0.0:
     version "3.0.0"
     resolved "https://registry.nlark.com/cli-width/download/cli-width-3.0.0.tgz#a2f48437a2caa9a22436e794bf071ec9e61cedf6"
@@ -2246,6 +2279,11 @@ Lockfile:
     resolved "https://registry.nlark.com/color-name/download/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
     integrity sha1-wqCah6y95pVD3m9j+jmVyCbFNqI=
   
+  colorette@^1.4.0:
+    version "1.4.0"
+    resolved "https://registry.npmmirror.com/colorette/download/colorette-1.4.0.tgz?cache=0&sync_timestamp=1633673592137&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fcolorette%2Fdownload%2Fcolorette-1.4.0.tgz#5190fbb87276259a86ad700bff2c6d6faa3fca40"
+    integrity sha1-UZD7uHJ2JZqGrXAL/yxtb6o/ykA=
+  
   columnify@^1.5.4:
     version "1.5.4"
     resolved "https://registry.nlark.com/columnify/download/columnify-1.5.4.tgz#4737ddf1c7b69a8a7c340570782e947eec8e78bb"
@@ -2260,6 +2298,11 @@ Lockfile:
     integrity sha1-w9RaizT9cwYxoRCoolIGgrMdWn8=
     dependencies:
       delayed-stream "~1.0.0"
+  
+  commander@^8.2.0:
+    version "8.2.0"
+    resolved "https://registry.nlark.com/commander/download/commander-8.2.0.tgz?cache=0&sync_timestamp=1631257318022&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fcommander%2Fdownload%2Fcommander-8.2.0.tgz#37fe2bde301d87d47a53adeff8b5915db1381ca8"
+    integrity sha1-N/4r3jAdh9R6U63v+LWRXbE4HKg=
   
   compare-func@^2.0.0:
     version "2.0.0"
@@ -2396,7 +2439,7 @@ Lockfile:
     resolved "https://registry.nlark.com/core-util-is/download/core-util-is-1.0.3.tgz?cache=0&sync_timestamp=1630421331815&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fcore-util-is%2Fdownload%2Fcore-util-is-1.0.3.tgz#a6042d3634c2b27e9328f837b965fac83808db85"
     integrity sha1-pgQtNjTCsn6TKPg3uWX6yDgI24U=
   
-  cosmiconfig@^7.0.0:
+  cosmiconfig@^7.0.0, cosmiconfig@^7.0.1:
     version "7.0.1"
     resolved "https://registry.nlark.com/cosmiconfig/download/cosmiconfig-7.0.1.tgz#714d756522cace867867ccb4474c5d01bbae5d6d"
     integrity sha1-cU11ZSLKzoZ4Z8y0R0xdAbuuXW0=
@@ -2464,7 +2507,7 @@ Lockfile:
     resolved "https://registry.nlark.com/dateformat/download/dateformat-3.0.3.tgz#a6e37499a4d9a9cf85ef5872044d62901c9889ae"
     integrity sha1-puN0maTZqc+F71hyBE1ikByYia4=
   
-  debug@4, debug@^4.1.0, debug@^4.1.1, debug@^4.3.1:
+  debug@4, debug@^4.1.0, debug@^4.1.1, debug@^4.3.1, debug@^4.3.2:
     version "4.3.2"
     resolved "https://registry.nlark.com/debug/download/debug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
     integrity sha1-8KScGKyHeeMdSgxgKd+3aHPHQos=
@@ -2644,6 +2687,13 @@ Lockfile:
     dependencies:
       iconv-lite "^0.6.2"
   
+  enquirer@^2.3.6:
+    version "2.3.6"
+    resolved "https://registry.nlark.com/enquirer/download/enquirer-2.3.6.tgz#2a7fe5dd634a1e4125a975ec994ff5456dc3734d"
+    integrity sha1-Kn/l3WNKHkElqXXsmU/1RW3Dc00=
+    dependencies:
+      ansi-colors "^4.1.1"
+  
   env-paths@^2.2.0:
     version "2.2.1"
     resolved "https://registry.nlark.com/env-paths/download/env-paths-2.2.1.tgz#420399d416ce1fbe9bc0a07c62fa68d67fd0f8f2"
@@ -2748,7 +2798,7 @@ Lockfile:
     resolved "https://registry.nlark.com/eventemitter3/download/eventemitter3-4.0.7.tgz#2de9b68f6528d5644ef5c59526a1b4a07306169f"
     integrity sha1-Lem2j2Uo1WRO9cWVJqG0oHMGFp8=
   
-  execa@^5.0.0:
+  execa@^5.0.0, execa@^5.1.1:
     version "5.1.1"
     resolved "https://registry.nlark.com/execa/download/execa-5.1.1.tgz?cache=0&sync_timestamp=1631064484690&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fexeca%2Fdownload%2Fexeca-5.1.1.tgz#f80ad9cbf4298f7bd1d4c9555c21e93741c411dd"
     integrity sha1-+ArZy/Qpj3vR1MlVXCHpN0HEEd0=
@@ -2989,6 +3039,11 @@ Lockfile:
       function-bind "^1.1.1"
       has "^1.0.3"
       has-symbols "^1.0.1"
+  
+  get-own-enumerable-property-symbols@^3.0.0:
+    version "3.0.2"
+    resolved "https://registry.nlark.com/get-own-enumerable-property-symbols/download/get-own-enumerable-property-symbols-3.0.2.tgz#b5fde77f22cbe35f390b4e089922c50bce6ef664"
+    integrity sha1-tf3nfyLL4185C04ImSLFC85u9mQ=
   
   get-package-type@^0.1.0:
     version "0.1.0"
@@ -3263,6 +3318,11 @@ Lockfile:
     dependencies:
       ms "^2.0.0"
   
+  husky@^7.0.2:
+    version "7.0.2"
+    resolved "https://registry.nlark.com/husky/download/husky-7.0.2.tgz#21900da0f30199acca43a46c043c4ad84ae88dff"
+    integrity sha1-IZANoPMBmazKQ6RsBDxK2Erojf8=
+  
   iconv-lite@0.4.24, iconv-lite@^0.4.24:
     version "0.4.24"
     resolved "https://registry.nlark.com/iconv-lite/download/iconv-lite-0.4.24.tgz#2022b4b25fbddc21d2f524974a474aafe733908b"
@@ -3493,6 +3553,11 @@ Lockfile:
     resolved "https://registry.nlark.com/is-number/download/is-number-7.0.0.tgz#7535345b896734d5f80c4d06c50955527a14f12b"
     integrity sha1-dTU0W4lnNNX4DE0GxQlVUnoU8Ss=
   
+  is-obj@^1.0.1:
+    version "1.0.1"
+    resolved "https://registry.nlark.com/is-obj/download/is-obj-1.0.1.tgz#3e4729ac1f5fde025cd7d83a896dab9f4f67db0f"
+    integrity sha1-PkcprB9f3gJc19g6iW2rn09n2w8=
+  
   is-obj@^2.0.0:
     version "2.0.0"
     resolved "https://registry.nlark.com/is-obj/download/is-obj-2.0.0.tgz#473fb05d973705e3fd9620545018ca8e22ef4982"
@@ -3532,6 +3597,11 @@ Lockfile:
     dependencies:
       call-bind "^1.0.2"
       has-tostringtag "^1.0.0"
+  
+  is-regexp@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.nlark.com/is-regexp/download/is-regexp-1.0.0.tgz#fd2d883545c46bac5a633e7b9a09e87fa2cb5069"
+    integrity sha1-/S2INUXEa6xaYz57mgnof6LLUGk=
   
   is-shared-array-buffer@^1.0.1:
     version "1.0.1"
@@ -4240,6 +4310,39 @@ Lockfile:
     resolved "https://registry.nlark.com/lines-and-columns/download/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
     integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
   
+  lint-staged@^11.2.2:
+    version "11.2.2"
+    resolved "https://registry.npmmirror.com/lint-staged/download/lint-staged-11.2.2.tgz?cache=0&sync_timestamp=1633820491980&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Flint-staged%2Fdownload%2Flint-staged-11.2.2.tgz#b2b96d8c4eb350f832143c812defa2c70b9d0a2c"
+    integrity sha1-srltjE6zUPgyFDyBLe+ixwudCiw=
+    dependencies:
+      cli-truncate "2.1.0"
+      colorette "^1.4.0"
+      commander "^8.2.0"
+      cosmiconfig "^7.0.1"
+      debug "^4.3.2"
+      enquirer "^2.3.6"
+      execa "^5.1.1"
+      listr2 "^3.12.2"
+      micromatch "^4.0.4"
+      normalize-path "^3.0.0"
+      please-upgrade-node "^3.2.0"
+      string-argv "0.3.1"
+      stringify-object "3.3.0"
+      supports-color "8.1.1"
+  
+  listr2@^3.12.2:
+    version "3.12.2"
+    resolved "https://registry.npmmirror.com/listr2/download/listr2-3.12.2.tgz?cache=0&sync_timestamp=1632406984320&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Flistr2%2Fdownload%2Flistr2-3.12.2.tgz#2d55cc627111603ad4768a9e87c9c7bb9b49997e"
+    integrity sha1-LVXMYnERYDrUdoqeh8nHu5tJmX4=
+    dependencies:
+      cli-truncate "^2.1.0"
+      colorette "^1.4.0"
+      log-update "^4.0.0"
+      p-map "^4.0.0"
+      rxjs "^6.6.7"
+      through "^2.3.8"
+      wrap-ansi "^7.0.0"
+  
   load-json-file@^4.0.0:
     version "4.0.0"
     resolved "https://registry.nlark.com/load-json-file/download/load-json-file-4.0.0.tgz#2f5f45ab91e33216234fd53adab668eb4ec0993b"
@@ -4316,6 +4419,16 @@ Lockfile:
     version "4.17.21"
     resolved "https://registry.nlark.com/lodash/download/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
     integrity sha1-Z5WRxWTDv/quhFTPCz3zcMPWkRw=
+  
+  log-update@^4.0.0:
+    version "4.0.0"
+    resolved "https://registry.nlark.com/log-update/download/log-update-4.0.0.tgz#589ecd352471f2a1c0c570287543a64dfd20e0a1"
+    integrity sha1-WJ7NNSRx8qHAxXAodUOmTf0g4KE=
+    dependencies:
+      ansi-escapes "^4.3.0"
+      cli-cursor "^3.1.0"
+      slice-ansi "^4.0.0"
+      wrap-ansi "^6.2.0"
   
   lru-cache@^6.0.0:
     version "6.0.0"
@@ -5186,6 +5299,13 @@ Lockfile:
     dependencies:
       find-up "^4.0.0"
   
+  please-upgrade-node@^3.2.0:
+    version "3.2.0"
+    resolved "https://registry.npmmirror.com/please-upgrade-node/download/please-upgrade-node-3.2.0.tgz#aeddd3f994c933e4ad98b99d9a556efa0e2fe942"
+    integrity sha1-rt3T+ZTJM+StmLmdmlVu+g4v6UI=
+    dependencies:
+      semver-compare "^1.0.0"
+  
   prelude-ls@~1.1.2:
     version "1.1.2"
     resolved "https://registry.nlark.com/prelude-ls/download/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
@@ -5538,7 +5658,7 @@ Lockfile:
     dependencies:
       queue-microtask "^1.2.2"
   
-  rxjs@^6.6.0:
+  rxjs@^6.6.0, rxjs@^6.6.7:
     version "6.6.7"
     resolved "https://registry.npmmirror.com/rxjs/download/rxjs-6.6.7.tgz#90ac018acabf491bf65044235d5863c4dab804c9"
     integrity sha1-kKwBisq/SRv2UEQjXVhjxNq4BMk=
@@ -5566,6 +5686,11 @@ Lockfile:
     integrity sha1-7rq5U/o7dgjb6U5drbFciI+maW0=
     dependencies:
       xmlchars "^2.2.0"
+  
+  semver-compare@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.nlark.com/semver-compare/download/semver-compare-1.0.0.tgz#0dee216a1c941ab37e9efb1788f6afc5ff5537fc"
+    integrity sha1-De4hahyUGrN+nvsXiPavxf9VN/w=
   
   "semver@2 || 3 || 4 || 5", semver@^5.6.0, semver@^5.7.1:
     version "5.7.1"
@@ -5631,6 +5756,24 @@ Lockfile:
     version "3.0.0"
     resolved "https://registry.nlark.com/slash/download/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
     integrity sha1-ZTm+hwwWWtvVJAIg2+Nh8bxNRjQ=
+  
+  slice-ansi@^3.0.0:
+    version "3.0.0"
+    resolved "https://registry.nlark.com/slice-ansi/download/slice-ansi-3.0.0.tgz#31ddc10930a1b7e0b67b08c96c2f49b77a789787"
+    integrity sha1-Md3BCTCht+C2ewjJbC9Jt3p4l4c=
+    dependencies:
+      ansi-styles "^4.0.0"
+      astral-regex "^2.0.0"
+      is-fullwidth-code-point "^3.0.0"
+  
+  slice-ansi@^4.0.0:
+    version "4.0.0"
+    resolved "https://registry.nlark.com/slice-ansi/download/slice-ansi-4.0.0.tgz#500e8dd0fd55b05815086255b3195adf2a45fe6b"
+    integrity sha1-UA6N0P1VsFgVCGJVsxla3ypF/ms=
+    dependencies:
+      ansi-styles "^4.0.0"
+      astral-regex "^2.0.0"
+      is-fullwidth-code-point "^3.0.0"
   
   slide@^1.1.6:
     version "1.1.6"
@@ -5789,6 +5932,11 @@ Lockfile:
     resolved "https://registry.nlark.com/strict-uri-encode/download/strict-uri-encode-2.0.0.tgz#b9c7330c7042862f6b142dc274bbcc5866ce3546"
     integrity sha1-ucczDHBChi9rFC3CdLvMWGbONUY=
   
+  string-argv@0.3.1:
+    version "0.3.1"
+    resolved "https://registry.nlark.com/string-argv/download/string-argv-0.3.1.tgz#95e2fbec0427ae19184935f816d74aaa4c5c19da"
+    integrity sha1-leL77AQnrhkYSTX4FtdKqkxcGdo=
+  
   string-length@^4.0.1:
     version "4.0.2"
     resolved "https://registry.nlark.com/string-length/download/string-length-4.0.2.tgz#a8a8dc7bd5c1a82b9b3c8b87e125f66871b6e57a"
@@ -5853,6 +6001,15 @@ Lockfile:
     dependencies:
       safe-buffer "~5.1.0"
   
+  stringify-object@3.3.0:
+    version "3.3.0"
+    resolved "https://registry.nlark.com/stringify-object/download/stringify-object-3.3.0.tgz#703065aefca19300d3ce88af4f5b3956d7556629"
+    integrity sha1-cDBlrvyhkwDTzoivT1s5VtdVZik=
+    dependencies:
+      get-own-enumerable-property-symbols "^3.0.0"
+      is-obj "^1.0.1"
+      is-regexp "^1.0.0"
+  
   strip-ansi@^3.0.0, strip-ansi@^3.0.1:
     version "3.0.1"
     resolved "https://registry.npmmirror.com/strip-ansi/download/strip-ansi-3.0.1.tgz?cache=0&sync_timestamp=1632420537546&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fstrip-ansi%2Fdownload%2Fstrip-ansi-3.0.1.tgz#6a385fb8853d952d5ff05d0e8aaf94278dc63dcf"
@@ -5905,6 +6062,13 @@ Lockfile:
       minimist "^1.2.0"
       through "^2.3.4"
   
+  supports-color@8.1.1, supports-color@^8.0.0:
+    version "8.1.1"
+    resolved "https://registry.nlark.com/supports-color/download/supports-color-8.1.1.tgz?cache=0&sync_timestamp=1626703508574&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fsupports-color%2Fdownload%2Fsupports-color-8.1.1.tgz#cd6fc17e28500cff56c1b86c0a7fd4a54a73005c"
+    integrity sha1-zW/BfihQDP9WwbhsCn/UpUpzAFw=
+    dependencies:
+      has-flag "^4.0.0"
+  
   supports-color@^5.3.0:
     version "5.5.0"
     resolved "https://registry.nlark.com/supports-color/download/supports-color-5.5.0.tgz?cache=0&sync_timestamp=1626703553943&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fsupports-color%2Fdownload%2Fsupports-color-5.5.0.tgz#e2e69a44ac8772f78a1ec0b35b689df6530efc8f"
@@ -5916,13 +6080,6 @@ Lockfile:
     version "7.2.0"
     resolved "https://registry.nlark.com/supports-color/download/supports-color-7.2.0.tgz?cache=0&sync_timestamp=1626703553943&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fsupports-color%2Fdownload%2Fsupports-color-7.2.0.tgz#1b7dcdcb32b8138801b3e478ba6a51caa89648da"
     integrity sha1-G33NyzK4E4gBs+R4umpRyqiWSNo=
-    dependencies:
-      has-flag "^4.0.0"
-  
-  supports-color@^8.0.0:
-    version "8.1.1"
-    resolved "https://registry.nlark.com/supports-color/download/supports-color-8.1.1.tgz?cache=0&sync_timestamp=1626703508574&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fsupports-color%2Fdownload%2Fsupports-color-8.1.1.tgz#cd6fc17e28500cff56c1b86c0a7fd4a54a73005c"
-    integrity sha1-zW/BfihQDP9WwbhsCn/UpUpzAFw=
     dependencies:
       has-flag "^4.0.0"
   
@@ -6022,7 +6179,7 @@ Lockfile:
     dependencies:
       readable-stream "3"
   
-  through@2, "through@>=2.2.7 <3", through@^2.3.4, through@^2.3.6:
+  through@2, "through@>=2.2.7 <3", through@^2.3.4, through@^2.3.6, through@^2.3.8:
     version "2.3.8"
     resolved "https://registry.nlark.com/through/download/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
     integrity sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=
@@ -6402,6 +6559,15 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.nlark.com/wordwrap/download/wordwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb"
     integrity sha1-J1hIEIkUVqQXHI0CJkQa3pDLyus=
+  
+  wrap-ansi@^6.2.0:
+    version "6.2.0"
+    resolved "https://registry.nlark.com/wrap-ansi/download/wrap-ansi-6.2.0.tgz#e9393ba07102e6c91a3b221478f0257cd2856e53"
+    integrity sha1-6Tk7oHEC5skaOyIUePAlfNKFblM=
+    dependencies:
+      ansi-styles "^4.0.0"
+      string-width "^4.1.0"
+      strip-ansi "^6.0.0"
   
   wrap-ansi@^7.0.0:
     version "7.0.0"
