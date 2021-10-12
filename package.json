@@ -27,7 +27,7 @@
   ],
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-emoji-chinese"
+       "path": "./node_modules/cz-emoji-chinese"
     }
   }
 }
