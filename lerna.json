@@ -2,5 +2,12 @@
   "packages": ["packages/*"],
   "version": "independent",
   "npmClient": "yarn",
-  "useWorkspaces": true
+  "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "conventionalCommits": true,
+      "message": "chore: publish %s :tada:",
+      "ignoreChanges": ["CHANGELOG.md"]
+    }
+  }
 }

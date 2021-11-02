@@ -7,6 +7,7 @@
   "author": "lvfangren <m18188267414@163.com>",
   "license": "MIT",
   "scripts": {
+    "bootstrap": "lerna bootstrap",
     "build": "lerna run --stream --sort build",
     "clean": "yarn workspaces run clean",
     "test": "yarn workspaces run test"
@@ -25,9 +26,25 @@
   "workspaces": [
     "packages/*"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "config": {
     "commitizen": {
        "path": "./node_modules/cz-emoji-chinese"
     }
+  },
+  "lint-staged": {
+    "*.{js,vue,jsx,less,md,json}": [
+      "echo '暂时不添加校验'",
+      "git add"
+    ],
+    "*.ts?(x)": [
+      "echo '暂时不添加校验'",
+      "git add"
+    ]
   }
 }
