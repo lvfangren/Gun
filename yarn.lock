@@ -2317,11 +2317,6 @@ compare-func@^2.0.0:
     array-ify "^1.0.0"
     dot-prop "^5.1.0"
 
-comutils@^1.1.9:
-  version "1.1.19"
-  resolved "https://registry.nlark.com/comutils/download/comutils-1.1.19.tgz#3e07f306abf48e83726511713a72b20565034443"
-  integrity sha1-PgfzBqv0joNyZRFxOnKyBWUDREM=
-
 concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.nlark.com/concat-map/download/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
@@ -6865,16 +6860,9 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-vue-seamless-scroll@^1.1.23:
-  version "1.1.23"
-  resolved "https://registry.nlark.com/vue-seamless-scroll/download/vue-seamless-scroll-1.1.23.tgz#dde81b3c79aa499791b3c3bffd0fdb22ff3e59a7"
-  integrity sha1-3egbPHmqSZeRs8O//Q/bIv8+Wac=
-  dependencies:
-    comutils "^1.1.9"
-
 vue@^2.6.14:
   version "2.6.14"
-  resolved "https://registry.npmmirror.com/vue/download/vue-2.6.14.tgz?cache=0&sync_timestamp=1635836044818&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fvue%2Fdownload%2Fvue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
+  resolved "http://npm.yiche.com/vue/-/vue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
   integrity sha1-5RqlJQJQ1Wmj+606ilpofWA24jU=
 
 w3c-hr-time@^1.0.2:

@@ -1,11 +1,11 @@
 {
-  "name": "lfr502-m4a1",
-  "version": "0.0.1",
-  "description": "暂时无",
+  "name": "vue-seamless-scroll-new",
+  "version": "1.0.0",
+  "description": "> TODO: description",
   "author": "lvfangren <m18188267414@163.com>",
   "homepage": "https://github.com/lvfangren/Gun#readme",
   "license": "MIT",
-  "main": "lib/vue-seamless-scroll.js",
+  "main": "lib/vue-seamless-scroll-new.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -14,7 +14,7 @@
     "lib"
   ],
   "publishConfig": {
-    "registry": "https://registry.nlark.com/"
+    "registry": "http://npm.yiche.com/registry/"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,8 @@
   },
   "bugs": {
     "url": "https://github.com/lvfangren/Gun/issues"
+  },
+  "dependencies": {
+    "vue": "^2.6.14"
   }
 }
