@@ -1,0 +1,32 @@
+{
+  "name": "vue-seamless-scroll-new",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "lvfangren <m18188267414@163.com>",
+  "homepage": "https://github.com/lvfangren/Gun#readme",
+  "license": "MIT",
+  "main": "lib/vue-seamless-scroll-new.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://npm.yiche.com/registry/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lvfangren/Gun.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/lvfangren/Gun/issues"
+  },
+  "dependencies": {
+    "vue": "^2.6.14"
+  }
+}

@@ -10,6 +10,9 @@
 
 懒加载图片效果 vue-lazy-image-box-loading
 
+弹窗验证码 vue-pop-sendcode
+
+
 ## reffer
 
 [参考](https://jishuin.proginn.com/p/763bfbd5505d)
