@@ -27,6 +27,7 @@
     "url": "https://github.com/lvfangren/Gun/issues"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "vue": "^2.6.14"
   }
 }
