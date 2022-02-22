@@ -1,11 +1,11 @@
 {
-  "name": "vue-seamless-scroll-new",
+  "name": "vuebacktotop",
   "version": "1.0.0",
   "description": "> TODO: description",
   "author": "lvfangren <m18188267414@163.com>",
   "homepage": "https://github.com/lvfangren/Gun#readme",
   "license": "MIT",
-  "main": "lib/vue-seamless-scroll-new.js",
+  "main": "lib/vueBackToTop.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -14,7 +14,8 @@
     "lib"
   ],
   "publishConfig": {
-    "registry": "http://npm.yiche.com/registry/"
+    "access": "public",
+    "registry": "https://registry.nlark.com/"
   },
   "repository": {
     "type": "git",
@@ -25,9 +26,5 @@
   },
   "bugs": {
     "url": "https://github.com/lvfangren/Gun/issues"
-  },
-  "dependencies": {
-    "lodash": "^4.17.21",
-    "vue": "^2.6.14"
   }
 }

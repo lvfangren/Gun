@@ -1,3 +1,17 @@
+# `vueBackToTop`
+
+> TODO: description
+
+## Usage
+
+```
+const vuebacktotop = require('vueBackToTop');
+
+// TODO: DEMONSTRATE API
+```
+
+
+
 # `vue-back-to-top`
 
 为什么写它：

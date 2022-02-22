@@ -1,3 +1,15 @@
+# `vueSeamLessScroll`
+
+> TODO: description
+
+## Usage
+
+```
+const vueseamlessscroll = require('vueSeamLessScroll');
+
+// TODO: DEMONSTRATE API
+```
+
 # `vue-seamless-scroll-new`
 
 这个是一个Vue滚动效果列表组件。基于vue-seamless-scroll做了些修改和功能支持。

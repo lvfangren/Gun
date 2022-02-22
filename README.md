@@ -1,4 +1,7 @@
+# JOY && TOY
+
 # Gun
+[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
 
 基于lerna的monorepo项目，包含开发常见库（例如：工具函数库，Vue相关库，其它工具相关），为开发提供便利。
