@@ -1,0 +1,34 @@
+{
+  "name": "draglist",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "lvfangren <m18188267414@163.com>",
+  "homepage": "https://github.com/lvfangren/Gun#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "types": "lib/index.d.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.nlark.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lvfangren/Gun.git"
+  },
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json && esbuild lib/index.ts --outfile=dist/outer.js",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/lvfangren/Gun/issues"
+  },
+  "dependencies": {
+    "esbuild": "^0.14.23"
+  }
+}
