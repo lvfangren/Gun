@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import SeamlessScrollNew from './src/index.vue';
 let intalled = false
-  
+
 
 
 export default {

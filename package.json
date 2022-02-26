@@ -2,7 +2,6 @@
   "name": "root",
   "version": "1.0.0",
   "private": true,
-  "main": "index.js",
   "repository": "git@github.com:lvfangren/Gun.git",
   "author": "lvfangren <m18188267414@163.com>",
   "license": "MIT",
@@ -14,7 +13,9 @@
     "test": "yarn workspaces run test",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs"
+    "docs:serve": "vitepress serve docs",
+    "demo:dev": "cd examples && npm run dev",
+    "demo:build": "cd examples && npm run build"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.2.1",
