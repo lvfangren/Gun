@@ -33,7 +33,7 @@ jobs:
       - run: |
           cd examples
           npm ci
-          npm run demo:build
+          npm run build
 
       # 自动发布GitHubpage
       - name: Deploy to GitHub Pages

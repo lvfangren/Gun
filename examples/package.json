@@ -14,7 +14,7 @@
   "keywords": [],
   "author": "lvfangren",
   "license": "MIT",
-  "description": "",
+  "description": "测试demo",
   "dependencies": {
     "axios": "0.21.1",
     "normalize.css": "8.0.1",
