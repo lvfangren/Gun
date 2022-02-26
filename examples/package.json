@@ -7,7 +7,6 @@
     "build": "NODE_ENV=production webpack --config config/webpack.prod.config.js",
     "lint": "eslint --fix --ext .ts,.vue src",
     "lint:fix": "eslint --fix src/App.vue",
-    "prepare": "husky install",
     "commit": "git-cz",
     "genlog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
@@ -68,16 +67,6 @@
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
-    }
-  },
-  "engines": {
-    "node": ">= 12.13.0",
-    "npm": ">= 6.12.0"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E $HUSKY_GIT_PARAMS",
-      "pre-commit": "npm run lint:fix"
     }
   },
   "lint-staged": {
