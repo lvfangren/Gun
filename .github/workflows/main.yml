@@ -31,6 +31,7 @@ jobs:
           node-version: '12'
           cache: 'npm'
       - run: |
+          cd examples
           npm ci
           npm run demo:build
 
