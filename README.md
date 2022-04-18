@@ -17,6 +17,7 @@
 
 可拖拽列表 drag-list
 
+ping code input组件 vue-pop-send-code
 
 ## lerna命令
 * lerna init -- 初始化lerna项目,初始化的时候带上参数可以使用不同模式(各个子包版本统一与否)
