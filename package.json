@@ -1,7 +1,6 @@
 {
   "name": "root",
-  "version": "1.0.0",
-  "private": true,
+  "version": "1.0.1",
   "repository": "git@github.com:lvfangren/Gun.git",
   "author": "lvfangren <m18188267414@163.com>",
   "license": "MIT",
