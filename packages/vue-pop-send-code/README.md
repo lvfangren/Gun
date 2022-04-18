@@ -20,3 +20,6 @@ const vuePopSendCode = require('vue-pop-send-code');
 
 // TODO: DEMONSTRATE API
 ```
+
+
+build 支持UMD，ESM，CJS模块化
