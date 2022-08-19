@@ -1,0 +1,32 @@
+{
+  "name": "vueimageupload",
+  "version": "1.0.0",
+  "description": "图片上传组件",
+  "keywords": [
+    "图片上传"
+  ],
+  "author": "lvfangren <m18188267414@163.com>",
+  "homepage": "https://github.com/lvfangren/Gun#readme",
+  "license": "MIT",
+  "main": "index.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lvfangren/Gun.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/lvfangren/Gun/issues"
+  }
+}
